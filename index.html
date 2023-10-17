@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> viewer3dmodelist </title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .content {
+            margin: 20px;
+        }
+        .embed-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Viewer.3dModelist</h1>
+        <p>design by: jerico alvin espanto </p>
+    </div>
+    <div class="content">
+        <h2>Embed your 3d model from sketchup warehouse</h2>
+        <textarea id="embedInput" placeholder="Paste your embed code here"></textarea>
+        <button id="loadButton">Load </button>
+        <div class="embed-container">
+            <iframe id="viewer" src="" frameborder="0"></iframe>
+        </div>
+    </div>
+    <script>
+        const embedInput = document.getElementById('embedInput');
+        const loadButton = document.getElementById('loadButton');
+        const viewer = document.getElementById('viewer');
+
+        loadButton.addEventListener('click', () => {
+            const embedCode = embedInput.value.trim();
+            if (embedCode !== '') {
+                viewer.srcdoc = embedCode;
+            }
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Change Background</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            background: url('') no-repeat center center fixed; /* Initially, no background image */
+            background-size: cover;
+            transition: background 0.5s;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        label {
+            background: #0074D9;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="imageInput">Upload Image</label>
+        <input type="file" accept="image/*" id="imageInput">
+    </div>
+    <script>
+        const imageInput = document.getElementById('imageInput');
+        const body = document.body;
+
+        imageInput.addEventListener('change', () => {
+            const file = imageInput.files[0];
+            if (file) {
+                const imageUrl = URL.createObjectURL(file);
+                body.style.background = `url('${imageUrl}') no-repeat center center fixed`;
+                body.style.backgroundSize = 'cover';
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+        <a href="https://www.facebook.com/jericoalvin18" target="_blank">Owner's Facebook</a>
+
+
+<iframe src="https://clara.io/embed/d49ee603-8e6c-4720-bd20-9e3d7b13978a?renderer=webgl" width="800" height="600" allowfullscreen></iframe>
